@@ -23,11 +23,12 @@ into the {body} of the default.hbs template --}}
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
             {{#unless @custom.show_logo_in_navigation}}
-                {{#if @site.logo}}
+						<h1 class="site-title">{{@site.title}}</h1>
+                {{!-- {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
-                {{/if}}
+                {{/if}} --}}
             {{/unless}}
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
@@ -48,5 +49,33 @@ into the {body} of the default.hbs template --}}
         {{/foreach}}
     </div>
 
+</div>
+<div class="inner branches">
+	<style>
+		.branches {
+			margin-top: 50px
+		}
+		.branches h1 {
+			text-align: center;
+		}
+		.branches-content {
+			padding: 0 10vw;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 15px;
+		}
+		.branch-item {
+			width: 220px;
+		}
+	</style>
+	<h1 class>Las ramas</h1>
+	<div class="branches-content">
+		<a href="/rama-1"><img src="/assets/built/img/uniforme.png" alt="" class="branch-item"></a>
+		<a href="/rama-2"><img src="/assets/built/img/boy-scout.png" alt="" class="branch-item"></a>
+		<a href="/rama-3"><img src="/assets/built/img/brujula.png" alt="" class="branch-item"></a>
+		<a href="/rama-4"><img src="/assets/built/img/panuelo.png" alt="" class="branch-item"></a>
+		<a href="/rama-5"><img src="/assets/built/img/pata.png" alt="" class="branch-item"></a>
+	</div>
 </div>
 </main>
